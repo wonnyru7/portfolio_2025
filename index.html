@@ -273,17 +273,29 @@
         homeLogo.addEventListener('click', () => {
             showContent(portfolioContent);
         });
+        
+        
 
-        // banner 클릭 이벤트
-        banners.forEach((banner, index) => {
-            banner.addEventListener('click', () => {
-                previousScrollY = window.scrollY;
-                detailImage.src = `promotion${index + 1}.webp`;
-                detailImage.alt = `promotion${index + 1}`;
-                showContent(detailContent);
-            });
-        });
+            // banner 클릭 이벤트
+            banners.forEach((banner, index) => {
+                banner.addEventListener('click', () => {
+                    previousScrollY = window.scrollY;
 
+                    // 특정 인덱스(13번, 17번)는 .jpg, 나머지는 .webp
+                    if (index + 1 === 13 || index + 1 === 17) {
+                        detailImage.src = `promotion${index + 1}.jpg`;
+                        detailImage.alt = `promotion${index + 1}`;
+                    } else {
+                        detailImage.src = `promotion${index + 1}.webp`;
+                        detailImage.alt = `promotion${index + 1}`;
+                    }
+
+                    showContent(detailContent);
+                });
+            });      
+        
+        
+        
               // 뒤로 가기 버튼 클릭
         backBtn.addEventListener('click', () => {
             showContent(portfolioContent);
