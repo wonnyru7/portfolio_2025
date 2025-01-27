@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonny's Portfolio</title>
+    <style>
+        /* 기본 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+			text-align: center;
+        }
+
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+        }
+
+        /* 네비게이션 바 */
+		.navbar {
+			max-width: 1800px; /* 최대 너비 1024px */
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0; /* 오른쪽 끝도 고정 */
+			height: 100px;
+			background-color: #FFFFFF;
+			display: flex;
+			align-items: center;
+			justify-content: space-between; /* 내부 요소는 양 끝 정렬 */
+			margin: 0 auto; /* 전체 중앙 정렬 */
+			padding: 0 100px; /* 양쪽 여백 조정 */
+			z-index: 10;
+		}
+
+
+        .navbar .logo {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .navbar .menu a {
+            font-size: 22px;
+            font-weight: medium;
+            text-align: right;
+            text-decoration: none;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        /* 콘텐츠 영역 */
+		.content {
+		max-width: 1800px;
+		padding-top: 150px;
+		padding-left: 100px;
+		padding-right: 100px;
+		margin: 0 auto; /* 추가된 부분: 수평 중앙 정렬 */
+	}
+
+
+
+.portfolio {
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr)); /* 자동으로 열 수 조정 */
+    gap: 0; /* 간격 제거 */
+    margin: 0; /* 여백 제거 */
+}
+
+.portfolio div {
+    overflow: hidden; /* 자식 요소가 박스를 넘지 않도록 설정 */
+    position: relative; /* 자식 요소의 절대 위치 지정 가능 */
+}
+
+.portfolio img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* 이미지를 박스에 맞게 자르도록 설정 */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 부드러운 트랜지션 효과 */
+    display: block; /* 이미지의 기본 인라인 여백 제거 */
+}
+
+.portfolio img:hover {
+    transform: scale(1.1); /* 기존 크기에서 약간 커지도록 설정 */
+}
+
+
+
+        .contact, .detail {
+            display: none;
+        }
+
+        .contact p {
+            font-size: 20px;
+            font-weight: medium;
+        }
+
+        .contact img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .detail img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 200px;
+        }
+
+        .back-button button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            background-color: transparent;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-button button:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            .navbar {
+
+				padding: 0 30px;
+            }
+
+            .navbar .logo {
+                font-size: 20px;
+            }
+
+            .navbar .menu a {
+                font-size: 18px;
+            }
+
+			.detail img {
+				max-width: 100%;
+
+				}
+			
+            .content {
+				padding-top: 100px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .portfolio {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+        <div class="logo" id="homeLogo">PARK JONG WON</div>
+        <div class="menu">
+            <a id="portfolioBtn">Portfolio</a>
+            <a id="contactBtn">About</a>
+        </div>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="content">
+        <!-- Portfolio 콘텐츠 -->
+        <div class="portfolio" id="portfolioContent">
+            <div><img src="banner1.jpg" alt="banner1" id="banner1"></div>
+            <div><img src="banner2.jpg" alt="banner2" id="banner2"></div>
+            <div><img src="banner3.jpg" alt="banner3" id="banner3"></div>
+            <div><img src="banner4.jpg" alt="banner4" id="banner4"></div>
+            <div><img src="banner5.jpg" alt="banner5" id="banner5"></div>
+            <div><img src="banner6.jpg" alt="banner6" id="banner6"></div>
+            <div><img src="banner7.jpg" alt="banner7" id="banner7"></div>
+            <div><img src="banner8.jpg" alt="banner8" id="banner8"></div>
+            <div><img src="banner9.jpg" alt="banner9" id="banner9"></div>
+            <div><img src="banner10.jpg" alt="banner10" id="banner10"></div>
+            <div><img src="banner11.jpg" alt="banner11" id="banner11"></div>
+            <div><img src="banner12.jpg" alt="banner12" id="banner12"></div>
+            <div><img src="banner13.jpg" alt="banner13" id="banner13"></div>
+            <div><img src="banner14.jpg" alt="banner14" id="banner14"></div>
+            <div><img src="banner15.jpg" alt="banner15" id="banner15"></div>
+            <div><img src="banner16.jpg" alt="banner16" id="banner16"></div>
+            <div><img src="banner17.jpg" alt="banner17" id="banner17"></div>
+            <div><img src="banner18.jpg" alt="banner18" id="banner18"></div>
+            <div><img src="banner19.jpg" alt="banner19" id="banner19"></div>
+            <div><img src="banner20.jpg" alt="banner20" id="banner20"></div>
+        </div>
+
+        <!-- Contact 콘텐츠 -->
+        <div class="contact" id="contactContent">
+            <img src="contact.png" alt="contact" id="contact">
+        </div>
+
+        <!-- Detail 콘텐츠 -->
+        <div class="detail" id="detailContent">
+            <img id="detailImage" src="" alt="Detail Image">
+            <div class="back-button">
+                <button id="backBtn">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 네비게이션 버튼
+        const portfolioBtn = document.getElementById('portfolioBtn');
+        const contactBtn = document.getElementById('contactBtn');
+        const homeLogo = document.getElementById('homeLogo');
+
+        // 콘텐츠 영역
+        const portfolioContent = document.getElementById('portfolioContent');
+        const contactContent = document.getElementById('contactContent');
+        const detailContent = document.getElementById('detailContent');
+        const detailImage = document.getElementById('detailImage');
+
+        // 뒤로 가기 버튼
+        const backBtn = document.getElementById('backBtn');
+
+        // banner 클릭
+        const banners = document.querySelectorAll('.portfolio img');
+
+        // 이전 스크롤 위치 저장 변수
+        let previousScrollY = 0;
+
+        // 화면 전환 함수
+        function showContent(contentToShow) {
+            portfolioContent.style.display = 'none';
+            contactContent.style.display = 'none';
+            detailContent.style.display = 'none';
+
+            contentToShow.style.display = 'block';
+
+            // 포트폴리오 콘텐츠가 보일 때 격자 형태로 설정
+            if (contentToShow === portfolioContent) {
+                portfolioContent.style.display = 'grid';
+            }
+        }
+
+        // Portfolio 버튼 클릭
+        portfolioBtn.addEventListener('click', () => {
+            showContent(portfolioContent);
+        });
+
+        // Contact 버튼 클릭
+        contactBtn.addEventListener('click', () => {
+            showContent(contactContent);
+        });
+
+        // Wonny 로고 클릭 시 기본 콘텐츠로 이동
+        homeLogo.addEventListener('click', () => {
+            showContent(portfolioContent);
+        });
+
+        // banner 클릭 이벤트
+        banners.forEach((banner, index) => {
+            banner.addEventListener('click', () => {
+                previousScrollY = window.scrollY;
+                detailImage.src = `promotion${index + 1}.jpg`;
+                detailImage.alt = `promotion${index + 1}`;
+                showContent(detailContent);
+            });
+        });
+
+              // 뒤로 가기 버튼 클릭
+        backBtn.addEventListener('click', () => {
+            showContent(portfolioContent);
+            window.scrollTo(0, previousScrollY);
+        });
+
+        // 윈도우 크기 변경 시 포트폴리오 콘텐츠 재정렬
+        window.addEventListener('resize', () => {
+            if (portfolioContent.style.display === 'grid') {
+            }
+        });
+		
+		
+	window.addEventListener('load', () => {
+    const portfolioContent = document.getElementById('portfolioContent');
+    const images = portfolioContent.querySelectorAll('img');
+
+    // 모든 이미지가 로드된 후 레이아웃을 다시 계산
+    images.forEach(img => {
+        img.onload = () => {
+            portfolioContent.style.display = 'grid'; // 그리드 레이아웃 설정
+        };
+    });
+});
+    </script>
+
+</body>
+</html>
