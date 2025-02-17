@@ -48,14 +48,18 @@ body {
 
 .splash-screen h1 {
     font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 11em;
+    font-size: 11rem;
     font-weight: bold;
     color: white;
     opacity: 0;
     animation: fadeInText 1.5s ease-in-out forwards 0.3s;
     line-height: 1.1;
+
 }
 
+
+        
+        
 .splash-screen p {
     font-family: 'Pragmatica Extended', sans-serif;
     font-size: 24px;
@@ -296,7 +300,7 @@ body {
                     navbar.style.opacity = "1";
                     mainContent.style.opacity = "1";
                 }, 500);
-            }, 2000);  // 800에서 2000으로 수정 (2초)
+            }, 2500);  // 800에서 2000으로 수정 (2초)
 
             // 콘텐츠 전환 함수
             function showContent(contentToShow) {
