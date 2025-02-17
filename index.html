@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARK JONG WON Portfolio</title>
     <style>
-   /* 기본 스타일 */
+ /* 기본 스타일 */
 @font-face {
     font-family: 'Pragmatica';
     src: url('path/to/Pragmatica-Bold.woff2') format('woff2'),
@@ -53,11 +53,9 @@ body {
     color: white;
     opacity: 0;
     animation: fadeInText 1.5s ease-in-out forwards 0.3s;
-    line-height: 1;  /* 1.1에서 0.9로 줄임 */
+    line-height: 1;
 }
 
-        
-        
 .splash-screen p {
     font-family: 'Pragmatica Extended', sans-serif;
     font-size: 24px;
@@ -65,10 +63,10 @@ body {
     color: white;
     opacity: 0;
     margin-top: 20px;
-    animation: fadeInTextUp 1.5s ease-in-out forwards 0.6s;  /* 새로운 애니메이션 적용 */
+    animation: fadeInTextUp 1.5s ease-in-out forwards 0.6s;
 }
 
-/* 기존 페이드인 */
+/* 애니메이션 */
 @keyframes fadeInText {
     0% { 
         opacity: 0;
@@ -80,11 +78,10 @@ body {
     }
 }
 
-/* 아래에서 위로 올라오는 새로운 페이드인 */
 @keyframes fadeInTextUp {
     0% {
         opacity: 0;
-        transform: translateY(30px);  /* 더 아래에서 시작 */
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
@@ -147,6 +144,7 @@ body {
     to { opacity: 1; }
 }
 
+/* 콘텐츠 영역 */
 .content {
     max-width: 1800px;
     padding-top: 150px;
@@ -159,6 +157,7 @@ body {
     overflow-y: auto;
 }
 
+/* 포트폴리오 그리드 */
 .portfolio {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -181,43 +180,44 @@ body {
     transform: scale(1.1);
 }
 
+/* 디테일 페이지 */
 .detail {
     width: 100%;
     text-align: center;
     padding: 20px;
     min-height: calc(100vh - 150px);
     overflow-y: auto;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
 .detail img {
-    max-width: 50%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
+/* 백 버튼 */
 #backBtn {
-    margin-top: 20px;
-    padding: 10px 40px;  /* 패딩값 좌우 늘림 */
+    margin-bottom: 50px;
+    padding: 10px 40px;
     font-family: 'Proxima Nova', sans-serif;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 50px;  /* 최대 라운드 값 */
-    border: 2px solid #000;  /* 검은색 테두리 */
-    background-color: transparent;  /* 배경 투명 */
-    color: #000;  /* 텍스트 검정 */
-    transition: all 0.3s ease;  /* 모든 변화에 트랜지션 적용 */
+    border-radius: 50px;
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.3s ease;
 }
 
 #backBtn:hover {
-    background-color: #000;  /* 호버시 검은 배경 */
-    color: #fff;  /* 호버시 흰색 텍스트 */
-    border-color: #000;  /* 호버시 테두리 색상 유지 */
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
 }
 
-
+/* About 페이지 */
 .about {
     width: 100%;
     text-align: center;
@@ -227,18 +227,16 @@ body {
 }
 
 .about img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
-        
- /* 기존 스타일은 유지하고 반응형 부분 추가/수정 */
-
+/* 모바일 반응형 */
 @media (max-width: 768px) {
     /* 네비게이션 */
     .navbar {
         padding: 0 30px;
-        height: 80px; /* 모바일에서는 높이 줄임 */
+        height: 80px;
     }
 
     .navbar .logo {
@@ -249,68 +247,45 @@ body {
         font-size: 18px;
     }
 
-    /* 스플래시 화면 반응형 */
+    /* 스플래시 화면 */
     .splash-screen h1 {
-        font-size: 60px; /* 모바일에서는 폰트 크기 줄임 */
+        font-size: 50px;
     }
 
     .splash-screen p {
-        font-size: 14px; /* contribution 텍스트 크기도 줄임 */
+        font-size: 14px;
         margin-top: 10px;
     }
 
-    /* 메인 콘텐츠 영역 */
+    /* 콘텐츠 영역 */
     .content {
-        padding-top: 100px;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-top: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     /* 포트폴리오 그리드 */
     .portfolio {
-        grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열로 변경 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 0;
     }
 
     /* 디테일 페이지 */
     .detail {
-        padding: 10px;
-        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .detail img {
-        max-width: 100%;
-    }
-}
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding
 
-/* 태블릿 사이즈를 위한 중간 크기 대응 */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .splash-screen h1 {
-        font-size: 90px; /* 태블릿에서는 중간 크기로 */
-    }
-
-    .splash-screen p {
-        font-size: 18px;
-    }
-
-    .navbar {
-        padding: 0 50px;
-    }
-
-    .navbar .logo {
-        font-size: 30px;
-    }
-
-    .navbar .menu a {
-        font-size: 20px;
-    }
-
-    .portfolio {
-        grid-template-columns: repeat(3, 1fr); /* 태블릿에서는 3열로 */
-    }
-}
-       
-        
         
 
     </style>
