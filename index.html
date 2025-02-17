@@ -231,6 +231,87 @@ body {
     height: auto;
 }
 
+        
+ /* 기존 스타일은 유지하고 반응형 부분 추가/수정 */
+
+@media (max-width: 768px) {
+    /* 네비게이션 */
+    .navbar {
+        padding: 0 30px;
+        height: 80px; /* 모바일에서는 높이 줄임 */
+    }
+
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .navbar .menu a {
+        font-size: 18px;
+    }
+
+    /* 스플래시 화면 반응형 */
+    .splash-screen h1 {
+        font-size: 60px; /* 모바일에서는 폰트 크기 줄임 */
+    }
+
+    .splash-screen p {
+        font-size: 14px; /* contribution 텍스트 크기도 줄임 */
+        margin-top: 10px;
+    }
+
+    /* 메인 콘텐츠 영역 */
+    .content {
+        padding-top: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* 포트폴리오 그리드 */
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열로 변경 */
+        gap: 0;
+    }
+
+    /* 디테일 페이지 */
+    .detail {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .detail img {
+        max-width: 100%;
+    }
+}
+
+/* 태블릿 사이즈를 위한 중간 크기 대응 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .splash-screen h1 {
+        font-size: 90px; /* 태블릿에서는 중간 크기로 */
+    }
+
+    .splash-screen p {
+        font-size: 18px;
+    }
+
+    .navbar {
+        padding: 0 50px;
+    }
+
+    .navbar .logo {
+        font-size: 30px;
+    }
+
+    .navbar .menu a {
+        font-size: 20px;
+    }
+
+    .portfolio {
+        grid-template-columns: repeat(3, 1fr); /* 태블릿에서는 3열로 */
+    }
+}
+       
+        
+        
 
     </style>
 </head>
