@@ -6,12 +6,36 @@
     <title>PARK JONG WON Portfolio</title>
     <style>
  /* 기본 스타일 */
+        
+        
 @font-face {
     font-family: 'Pragmatica';
-    src: url('path/to/Pragmatica-Bold.woff2') format('woff2'),
-         url('path/to/Pragmatica-Bold.woff') format('woff');
+    src: url('./fonts/Pragmatica-Regular.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Regular.woff') format('woff'),
+         url('./fonts/Pragmatica-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Bold.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Bold.woff') format('woff'),
+         url('./fonts/Pragmatica-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pragmatica Extended';
+    src: url('./fonts/PragmaticaExtended-Bold.woff2') format('woff2'),
+         url('./fonts/PragmaticaExtended-Bold.woff') format('woff'),
+         url('./fonts/PragmaticaExtended-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -22,7 +46,7 @@
 }
 
 body {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Pragmatica', sans-serif;
     background-color: black;
 }
 
@@ -222,7 +246,7 @@ body {
 #backBtn {
     margin-bottom: 50px;
     padding: 10px 40px;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Pragmatica', sans-serif;  /* 여기 변경 */
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
@@ -231,7 +255,7 @@ body {
     color: #000;
     transition: all 0.3s ease;
 }
-
+        
 #backBtn:hover {
     background-color: #000;
     color: #fff;
@@ -270,20 +294,22 @@ body {
 
     /* 스플래시 화면 */
     .splash-screen h1 {
-        font-size: 50px;
+        font-size: 30px;
+        padding-bottom: 20px;
     }
     .splash-screen h2 {
-        font-size: 50px;
+        font-size: 30px;
+        padding-bottom: 20px;
     }
 
     .splash-screen p1 {
         font-size: 14px;
-        margin-top: 10px;
+        padding-top: 10px;
     }
     
     .splash-screen p2 {
         font-size: 14px;
-        margin-top: 10px;
+
     }
 
     /* 콘텐츠 영역 */
