@@ -48,6 +48,17 @@ body {
 
 .splash-screen h1 {
     font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 170px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards 0.1s;
+    line-height: 1;
+      margin-bottom: -20px;
+}
+        
+.splash-screen h2 {
+    font-family: 'Pragmatica Extended', sans-serif;
     font-size: 180px;
     font-weight: bold;
     color: white;
@@ -55,16 +66,26 @@ body {
     animation: fadeInText 1.5s ease-in-out forwards 0.3s;
     line-height: 1;
 }
-
-.splash-screen p {
+        
+.splash-screen p1 {
     font-family: 'Pragmatica Extended', sans-serif;
     font-size: 24px;
     font-weight: 100;
     color: white;
     opacity: 0;
     margin-top: 20px;
-    animation: fadeInTextUp 1.5s ease-in-out forwards 0.6s;
+    animation: fadeInTextUp 1.3s ease-in-out forwards 0.5s;
 }
+        
+.splash-screen p2 {
+    font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    color: white;
+    opacity: 0;
+    margin-top: 20px;
+    animation: fadeInTextUp 1.3s ease-in-out forwards 0.7s;
+}        
 
 /* 애니메이션 */
 @keyframes fadeInText {
@@ -191,7 +212,7 @@ body {
 }
 
 .detail img {
-    width: 100%;
+    width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -251,8 +272,16 @@ body {
     .splash-screen h1 {
         font-size: 50px;
     }
+    .splash-screen h2 {
+        font-size: 50px;
+    }
 
-    .splash-screen p {
+    .splash-screen p1 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .splash-screen p2 {
         font-size: 14px;
         margin-top: 10px;
     }
@@ -294,8 +323,10 @@ body {
 <!-- 스플래시 화면 -->
 <div class="splash-screen" id="splashScreen">
     <div class="splash-text">
-        <h1>PARK JONG WON<br>PORTFOLIO</h1>
-        <p>(100% Contribution in Portfolio)</p>
+        <h1>PARK JONG WON</h1>
+        <h2>PORTFOLIO</h2>
+        <p1>(100% Contribution)</p1><br>
+        <p2>Optimized for PC</p2>
     </div>
 </div>
 
@@ -373,7 +404,9 @@ body {
             document.querySelectorAll('.portfolio img').forEach(img => {
                 img.addEventListener('click', function() {
                     const id = this.getAttribute('data-id');
-                    detailImage.src = `promotion${id}.webp`;
+                    // 13번과 17번은 jpg, 나머지는 webp로 설정
+                    const fileExtension = (id === '13' || id === '17') ? 'jpg' : 'webp';
+                    detailImage.src = `promotion${id}.${fileExtension}`;
                     detailImage.alt = `promotion${id}`;
                     showContent(detailContent);
                 });
