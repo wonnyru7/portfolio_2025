@@ -1,0 +1,110 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<!-- CSS 파일들 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/reset.min.css">
+
+<!-- JavaScript 파일들 -->
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/swiper-bundle-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl-event.js"></script>
+    
+    
+    
+    <style>.csl {display: none;padding-top: 1000px;max-width:400px;overflow:hidden;}</style>
+    <script>
+        if (document.getElementById("root") == undefined) {
+            window.addEventListener("DOMContentLoaded", () => {
+                pjw_onStart();
+            })
+        }
+    </script>
+</head>
+<body>
+<style>	
+	@keyframes ball1{
+   0%{transform:translate(0,0);}
+   100%{transform:translate(0,-15px);}
+}  		
+	.csl {display: none;padding-top: 1000px;max-width:400px;overflow:hidden;}
+	.csl-fixedCategory .csl-fc-wrap .csl-fc-list p { font-weight: 400; }
+	.csl .csl-scroll-start{opacity:0;}
+	.csl .csl-scroll-start.csl-scroll-right{transform : translateX(-15px)}
+	.csl .csl-scroll-start.csl-scroll-up{transform : translateY(15px)}
+	.csl .csl-scroll-start.csl-scroll-left{transform : translateX(15px)}
+	.csl .csl-scroll-start.csl-scroll-down{transform: translateY(-15px);}	
+	.csl .csl-blink {
+    animation: csl-blink 1.5s infinite;		
+	}
+	
+	.csl .main-visual-parallax-on-select2 .bg {
+			transition: transform 0s linear !important;
+		}	
+
+	.csl .csl-parallax .csl-parallax-bg {
+			transition: transform 0s linear !important;
+		}	
+	
+	
+	
+</style>
+   <main class="csl">	
+	   
+
+ <section class="content">
+            <div class="swiper swiperFadeAuto">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="k1.jpg"></div>
+                    <div class="swiper-slide"><img src="k2.jpg"></div>
+                </div>
+            </div>
+           
+			<img src="tt1.png" class="absolute csl-scroll-up" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.9s;z-index: 7;">
+            <img src="tt2.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.4s;z-index: 7;">
+            <img src="tt3.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.5s;z-index: 7;">
+   <img src="tt4.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.6s;z-index: 7;">
+   <img src="tt5.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.7s;z-index: 7;">
+
+ 			<img src="main_t.png?1" class="absolute" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;z-index: 7;">
+ 
+		</section>
+
+	   
+	   <div class="fullImg"><img src="promotion3.jpg"></div>
+	   
+
+   
+    
+       
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+    }
+    
+    // 페이지 로드 시
+    window.addEventListener('load', sendHeight);
+    
+    // DOM 변경 감지
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true
+    });
+    
+    // 이미지 로드 완료 시
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', sendHeight);
+    });
+</script>
+    
+    
+</body>
+
+</html>
