@@ -1,0 +1,64 @@
+<div class="navbar" id="navbar">
+    <div class="logo" id="homeLogo">
+        <a href="/portfolio_2025/index.html">PARK JONG WON</a>
+    </div>
+    <div class="menu">
+        <a href="/portfolio_2025/index.html#about">About</a>
+        <a href="/portfolio_2025/index.html">Portfolio</a>
+        <a href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
+    </div>
+</div>
+
+<style>
+.navbar {
+    max-width: 1800px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 100px;
+    z-index: 10;
+}
+
+.navbar .logo a {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 30px;
+        height: 80px;
+    }
+
+    .navbar .logo a {
+        font-size: 20px;
+    }
+
+    .navbar .menu a {
+        font-size: 18px;
+    }
+}
+</style>
