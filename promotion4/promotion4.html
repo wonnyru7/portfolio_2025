@@ -122,6 +122,32 @@
         }
         function pjw_onEnd() {if (window.csl != undefined) {window.removeEventListener("scroll", window.csl.custom );window.removeEventListener("resize", window.csl.custom );window.csl.onEnd();window.csl = undefined;}}
     </script>
+                 
+                     
+    
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+    }
+    
+    // 페이지 로드 시
+    window.addEventListener('load', sendHeight);
+    
+    // DOM 변경 감지
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true
+    });
+    
+    // 이미지 로드 완료 시
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', sendHeight);
+    });
+</script>
+    
 </body>
 
 </html>
