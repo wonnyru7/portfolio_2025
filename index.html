@@ -189,6 +189,32 @@ body {
     to { opacity: 1; }
 }
 
+/* 네비게이션 컨트롤 */
+.navigation-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 5px;
+}
+
+.nav-btn {
+    font-family: 'pretendard';
+    font-size: 48px;  /* 32px에서 48px로 변경 */
+    padding: 0 42px;  /* padding도 약간 늘림 */
+    font-weight: 100; 
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+}
+        
+        
 /* 콘텐츠 영역 */
 .content {
     max-width: 1800px;
@@ -244,9 +270,10 @@ body {
 
 /* 백 버튼 */
 #backBtn {
+    margin-top: 50px;  /* 윗여백 100px 추가 */
     margin-bottom: 50px;
     padding: 10px 40px;
-    font-family: 'Pragmatica', sans-serif;  /* 여기 변경 */
+    font-family: 'Pragmatica', sans-serif;
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
@@ -377,12 +404,17 @@ body {
                 }
             </script>
         </div>
-        
-        <!-- 상세 페이지 -->
-        <div class="detail" id="detailContent" style="display: none;">
-            <img id="detailImage" src="" alt="">
-            <button id="backBtn"> BACK </button>
+
+      <!-- 상세 페이지 -->
+    <div class="detail" id="detailContent" style="display: none;">
+        <img id="detailImage" src="" alt="">
+        <div class="navigation-controls">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <button id="backBtn">BACK</button>
+            <button class="nav-btn" id="nextBtn">→</button>
         </div>
+    </div>
+
         
         <!-- About 페이지 -->
         <div class="about" id="aboutContent" style="display: none;">
@@ -391,60 +423,96 @@ body {
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const splashScreen = document.getElementById('splashScreen');
-            const navbar = document.getElementById('navbar');
-            const mainContent = document.getElementById('mainContent');
-            const portfolioContent = document.getElementById('portfolioContent');
-            const detailContent = document.getElementById('detailContent');
-            const aboutContent = document.getElementById('aboutContent');
-            const detailImage = document.getElementById('detailImage');
-            const backBtn = document.getElementById('backBtn');
-            const portfolioBtn = document.getElementById('portfolioBtn');
-            const contactBtn = document.getElementById('contactBtn');
-            const homeLogo = document.getElementById('homeLogo');
+document.addEventListener("DOMContentLoaded", function () {
+    const splashScreen = document.getElementById('splashScreen');
+    const navbar = document.getElementById('navbar');
+    const mainContent = document.getElementById('mainContent');
+    const portfolioContent = document.getElementById('portfolioContent');
+    const detailContent = document.getElementById('detailContent');
+    const aboutContent = document.getElementById('aboutContent');
+    const detailImage = document.getElementById('detailImage');
+    const backBtn = document.getElementById('backBtn');
+    const portfolioBtn = document.getElementById('portfolioBtn');
+    const contactBtn = document.getElementById('contactBtn');
+    const homeLogo = document.getElementById('homeLogo');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentImageId = 1;
+    const totalImages = 20;
 
-            // 스플래시 화면 처리
-            setTimeout(() => {
-                splashScreen.style.opacity = "0";
-                setTimeout(() => {
-                    splashScreen.style.display = "none";
-                    document.body.style.backgroundColor = "white";
-                    navbar.style.opacity = "1";
-                    mainContent.style.opacity = "1";
-                }, 500);
-            }, 2500);  // 800에서 2000으로 수정 (2초)
+    // 스플래시 화면 처리
+    setTimeout(() => {
+        splashScreen.style.opacity = "0";
+        setTimeout(() => {
+            splashScreen.style.display = "none";
+            document.body.style.backgroundColor = "white";
+            navbar.style.opacity = "1";
+            mainContent.style.opacity = "1";
+        }, 500);
+    }, 2500);
 
-            // 콘텐츠 전환 함수
-            function showContent(contentToShow) {
-                portfolioContent.style.display = 'none';
-                detailContent.style.display = 'none';
-                aboutContent.style.display = 'none';
-                contentToShow.style.display = contentToShow === portfolioContent ? 'grid' : 'block';
-            }
-
-          // 네비게이션 이벤트
-            portfolioBtn.addEventListener('click', () => showContent(portfolioContent));
-            contactBtn.addEventListener('click', () => showContent(aboutContent));
-            homeLogo.addEventListener('click', () => showContent(portfolioContent));
-
-            // 포트폴리오 이미지 클릭 이벤트
-            document.querySelectorAll('.portfolio img').forEach(img => {
-                img.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    // 13번과 17번은 jpg, 나머지는 webp로 설정
-                    const fileExtension = (id === '13' || id === '17') ? 'jpg' : 'webp';
-                    detailImage.src = `promotion${id}.${fileExtension}`;
-                    detailImage.alt = `promotion${id}`;
-                    showContent(detailContent);
-                });
+    // 이미지 변경 함수
+    function changeImage(direction) {
+        let newId = direction === 'next' 
+            ? (currentImageId % totalImages) + 1 
+            : (currentImageId - 2 + totalImages) % totalImages + 1;
+        
+        currentImageId = newId;
+        const fileExtension = (newId === 13 || newId === 17) ? 'jpg' : 'webp';
+        detailImage.src = `promotion${newId}.${fileExtension}`;
+        detailImage.alt = `promotion${newId}`;
+        
+        // 이미지 로드 후 스크롤 최상단으로 이동
+        detailImage.onload = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        };
+    }
 
-            // 뒤로가기 버튼
-            backBtn.addEventListener('click', () => {
-                showContent(portfolioContent);
-            });
+    // 콘텐츠 전환 함수
+    function showContent(contentToShow) {
+        portfolioContent.style.display = 'none';
+        detailContent.style.display = 'none';
+        aboutContent.style.display = 'none';
+        contentToShow.style.display = contentToShow === portfolioContent ? 'grid' : 'block';
+    }
+
+    // 네비게이션 이벤트
+    portfolioBtn.addEventListener('click', () => showContent(portfolioContent));
+    contactBtn.addEventListener('click', () => showContent(aboutContent));
+    homeLogo.addEventListener('click', () => showContent(portfolioContent));
+
+    // 이전/다음 버튼 이벤트
+    prevBtn.addEventListener('click', () => changeImage('prev'));
+    nextBtn.addEventListener('click', () => changeImage('next'));
+
+    // 포트폴리오 이미지 클릭 이벤트
+    document.querySelectorAll('.portfolio img').forEach(img => {
+        img.addEventListener('click', function() {
+            currentImageId = parseInt(this.getAttribute('data-id'));
+            const fileExtension = (currentImageId === 13 || currentImageId === 17) ? 'jpg' : 'webp';
+            detailImage.src = `promotion${currentImageId}.${fileExtension}`;
+            detailImage.alt = `promotion${currentImageId}`;
+            showContent(detailContent);
         });
+    });
+
+    // 뒤로가기 버튼
+    backBtn.addEventListener('click', () => {
+        showContent(portfolioContent);
+    });
+
+    // 키보드 이벤트 추가
+    document.addEventListener('keydown', function(e) {
+        if (detailContent.style.display !== 'none') {
+            if (e.key === 'ArrowLeft') changeImage('prev');
+            if (e.key === 'ArrowRight') changeImage('next');
+        }
+    });
+});
+
     </script>
 
 </body>
