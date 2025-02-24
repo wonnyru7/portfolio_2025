@@ -76,10 +76,16 @@ body {
     font-weight: bold;
     color: white;
     opacity: 0;
-    animation: fadeInText 1.5s ease-in-out forwards 0.1s;
+    animation: fadeInText 1.3s ease-in-out forwards 0.1s;
     line-height: 1;
       margin-bottom: -20px;
 }
+        
+        
+        
+        
+        
+        
         
 .splash-screen h2 {
     font-family: 'Pragmatica Extended', sans-serif;
@@ -87,9 +93,41 @@ body {
     font-weight: bold;
     color: white;
     opacity: 0;
-    animation: fadeInText 1.5s ease-in-out forwards 0.3s;
+    animation: fadeInText 1.3s ease-in-out forwards 0.4s;
     line-height: 1;
+    position: relative;
+    z-index: 1;
 }
+
+.splash-screen h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 25px; /* 두께 25px로 변경 */
+    background-color: #0045FF !important;
+    animation: drawLine 1s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.3s; /* 0.6초로 단축 */
+    z-index: 2;
+}
+
+        
+        
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+   
+        
+        
+        
+        
         
 .splash-screen p1 {
     font-family: 'Pragmatica Extended', sans-serif;
@@ -98,17 +136,17 @@ body {
     color: white;
     opacity: 0;
     margin-top: 20px;
-    animation: fadeInTextUp 1.3s ease-in-out forwards 0.5s;
+    animation: fadeInTextUp 1.3s ease-in-out forwards 0.7s;
 }
         
 .splash-screen p2 {
     font-family: 'Pragmatica Extended', sans-serif;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 0;
     color: white;
     opacity: 0;
     margin-top: 20px;
-    animation: fadeInTextUp 1.3s ease-in-out forwards 0.7s;
+    animation: fadeInTextUp 1.3s ease-in-out forwards 1s;
 }        
 
 /* 애니메이션 */
