@@ -274,6 +274,39 @@ body {
     text-align: left;
     animation: fadeInLogo 2s ease-out forwards 0.5s;
 }
+
+
+.menu {
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+}
+
+.nav-item {
+    font-size: 22px; /* 기본 글자 크기 */
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: #000; /* 글자 색상 */
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+    padding: 5px 0; /* 위 아래 패딩 */
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* 중앙 정렬 */
+    bottom: -1px; /* 텍스트 아래 위치 */
+    width: 0; /* 초기 너비를 0으로 설정 */
+    height: 2px; /* 줄의 두께 */
+    background-color: #000000; /* 줄의 색상 */
+    transition: width 0.3s ease, left 0.3s ease; /* 애니메이션 효과 */
+    transform: translateX(-50%); /* 중앙 정렬 조정 */
+}
+
+.nav-item:hover::after {
+    width: 100%; /* 마우스 오버 시 너비를 100%로 변경 */
+    left: 50%; /* 중앙 정렬 */
+}
+
+
+
         
 /* 콘텐츠 영역 */
 .content {
@@ -298,18 +331,24 @@ body {
     animation: fadeInBanners 0.8s ease-out forwards 0.8s;
 }
 
+.portfolio div {
+    overflow: hidden; /* 부모 요소가 오버플로우를 숨기도록 설정 */
+    position: relative; /* 자식 요소의 위치를 상대적으로 설정 */
+}
+
 .portfolio img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* 변환 효과 추가 */
     display: block;
 }
 
 .portfolio img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* 이미지 확대 효과 */
+    cursor: pointer; /* 손 모양 커서 추가 */
 }
+
 
 /* 디테일 페이지 */
 .detail {
@@ -461,11 +500,12 @@ body {
         <div class="sub-logo">This portfolio is 100% self-produced.</div>
     </div>
     <div class="menu">
-        <a id="contactBtn">About</a>
-        <a id="portfolioBtn">Portfolio</a>
-        <a href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
+        <a class="nav-item" id="contactBtn">About</a>
+        <a class="nav-item" id="portfolioBtn">Portfolio</a>
+        <a class="nav-item" href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
     </div>
 </div>
+
     
     
     <!-- 콘텐츠 영역 -->
