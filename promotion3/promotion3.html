@@ -27,6 +27,8 @@
 </head>
 <body>
 <style>	
+
+
 	@keyframes ball1{
    0%{transform:translate(0,0);}
    100%{transform:translate(0,-15px);}
@@ -53,10 +55,12 @@
 	
 	
 </style>
-   <main class="csl">	
+
+
+    <main class="csl">	
 	   
 
- <section class="content">
+        <section class="content">
             <div class="swiper swiperFadeAuto">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="k1.jpg"></div>
@@ -64,23 +68,42 @@
                 </div>
             </div>
            
-			<img src="tt1.png" class="absolute csl-scroll-up" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.9s;z-index: 7;">
-            <img src="tt2.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.4s;z-index: 7;">
-            <img src="tt3.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.5s;z-index: 7;">
-   <img src="tt4.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.6s;z-index: 7;">
-   <img src="tt5.png" class="absolute csl-scroll-right" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.7s;z-index: 7;">
-
- 			<img src="main_t.png?1" class="absolute" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;z-index: 7;">
- 
+			<img src="tt1.png" class="absolute csl-scroll-up csl-scroll-start" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.9s;z-index: 7;">
+            <img src="tt2.png" class="absolute csl-scroll-right csl-scroll-start" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.4s;z-index: 7;">
+            <img src="tt3.png" class="absolute csl-scroll-right csl-scroll-start" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.5s;z-index: 7;">
+            <img src="tt4.png" class="absolute csl-scroll-right csl-scroll-start" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.6s;z-index: 7;">
+            <img src="tt5.png" class="absolute csl-scroll-right csl-scroll-start" style="transition-duration:0.85s;width:100%;left:0;bottom:0;transition-delay: 0.7s;z-index: 7;">
+ 			<img src="main_t.png" class="absolute" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;z-index: 7;">
 		</section>
 
-	   
-	   <div class="fullImg"><img src="promotion3.jpg"></div>
-	   
-
-   
+	    <div class="fullImg"><img src="promotion3.jpg"></div>
     
-       
+    </main>   
+
+
+	
+    <script>
+        function pjw_onStart() {
+         
+            if (window.csl == undefined) {
+                window.csl = new ContentScriptLibrary();
+                window.csl.custom = () => {
+                    // custom Event
+                }
+ 	
+	
+				//첫 화면 자동 스크롤 시작
+				document.querySelectorAll('.csl-scroll-start').forEach((item)=>{
+				item.classList.add('csl-scroll-on');
+				});
+				//첫 화면 자동 스크롤 끝
+            }
+        }
+        function pjw_onEnd() {if (window.csl != undefined) {window.removeEventListener("scroll", window.csl.custom );window.removeEventListener("resize", window.csl.custom );window.csl.onEnd();window.csl = undefined;}}
+    </script>
+    
+    
+    
 <script>
     function sendHeight() {
         const height = document.documentElement.scrollHeight;
@@ -103,6 +126,7 @@
         img.addEventListener('load', sendHeight);
     });
 </script>
+    
     
     
 </body>
