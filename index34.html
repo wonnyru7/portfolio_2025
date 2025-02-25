@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARK JONG WON Portfolio</title>
+    <style>
+ /* 기본 스타일 */
+        
+        
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Regular.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Regular.woff') format('woff'),
+         url('./fonts/Pragmatica-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Bold.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Bold.woff') format('woff'),
+         url('./fonts/Pragmatica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pragmatica Extended';
+    src: url('./fonts/PragmaticaExtended-Bold.woff2') format('woff2'),
+         url('./fonts/PragmaticaExtended-Bold.woff') format('woff'),
+         url('./fonts/PragmaticaExtended-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    font-family: 'Pragmatica', sans-serif;
+    background-color: black;
+}
+
+/* 스플래시 화면 */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    z-index: 100;
+}
+
+.splash-text {
+    text-align: center;
+}
+
+.splash-screen h1 {
+    font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 170px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    animation: fadeInText 1.3s ease-in-out forwards 0.1s;
+    line-height: 1;
+      margin-bottom: -20px;
+}
+        
+        
+        
+        
+        
+        
+        
+.splash-screen h2 {
+    font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 180px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    animation: fadeInText 1.4s ease-in-out forwards 0.4s;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.splash-screen h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 25px;
+    background-color: #0045FF !important;
+    animation: drawLine 1s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.8s; /* 1.3s에서 1.8s로 증가 */
+    z-index: 2;
+}
+
+        
+        
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+   
+        
+        
+        
+        
+        
+.splash-screen p1 {
+    font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: white;
+    opacity: 0;
+    margin-top: 20px;
+    animation: fadeInTextUp 1s ease-in-out forwards 0.7s;
+}
+        
+.splash-screen p2 {
+    font-family: 'Pragmatica Extended', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: white;
+    opacity: 0;
+    margin-top: 20px;
+    animation: fadeInTextUp 1s ease-in-out forwards 1s;
+}        
+
+/* 애니메이션 */
+@keyframes fadeInText {
+    0% { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTextUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 네비게이션 바 */
+.navbar {
+    max-width: 1800px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 100px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.navbar .logo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    animation: fadeInLogo 2s ease-out forwards 0.5s;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+    animation: fadeInMenu 2s ease-out forwards 0.8s;
+}
+
+.navbar .menu a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+@keyframes fadeInLogo {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBanners {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 네비게이션 컨트롤 */
+.navigation-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 5px;
+}
+
+.nav-btn {
+    font-family: 'pretendard';
+    font-size: 48px;  /* 32px에서 48px로 변경 */
+    padding: 0 42px;  /* padding도 약간 늘림 */
+    font-weight: 100; 
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+}
+        
+/* CSS 추가 */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    animation: fadeInLogo 2s ease-out forwards 0.5s;
+    margin-bottom: -5px; /* 간격 조정 */
+}
+
+.sub-logo {
+    font-family: 'Pragmatica', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    animation: fadeInLogo 2s ease-out forwards 0.5s;
+}
+        
+/* 콘텐츠 영역 */
+.content {
+    max-width: 1800px;
+    padding-top: 150px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* 포트폴리오 그리드 */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInBanners 0.8s ease-out forwards 0.8s;
+}
+
+.portfolio img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.portfolio img:hover {
+    transform: scale(1.1);
+}
+
+/* 디테일 페이지 */
+.detail {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    min-height: calc(100vh - 150px);
+    overflow-y: auto;
+    margin: 0 auto;
+}
+
+.detail img {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+        
+.detail {
+    overflow: hidden !important;
+}
+
+.detail iframe {
+    overflow-y: scroll;
+}
+
+
+
+/* 백 버튼 */
+#backBtn {
+    margin-top: 50px;  /* 윗여백 100px 추가 */
+    margin-bottom: 50px;
+    padding: 10px 40px;
+    font-family: 'Pragmatica', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.3s ease;
+}
+        
+#backBtn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* About 페이지 */
+.about {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    min-height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    /* 네비게이션 */
+    .navbar {
+        padding: 0 30px;
+        height: 80px;
+    }
+
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .navbar .menu a {
+        font-size: 18px;
+    }
+
+    /* 스플래시 화면 */
+    .splash-screen h1 {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+    .splash-screen h2 {
+        font-size: 50px;
+        padding-bottom: 20px;
+    }
+
+    .splash-screen p1 {
+        font-size: 14px;
+        padding-top: 10px;
+    }
+    
+    .splash-screen p2 {
+        font-size: 14px;
+
+    }
+
+    /* 콘텐츠 영역 */
+    .content {
+        padding-top: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 포트폴리오 그리드 */
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    /* 디테일 페이지 */
+    .detail {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .detail img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding
+
+        
+
+    </style>
+</head>
+<body>
+<!-- 스플래시 화면 -->
+<div class="splash-screen" id="splashScreen">
+    <div class="splash-text">
+        <h1>PARK JONG WON</h1>
+        <h2>PORTFOLIO</h2>
+        <p1>(100% Contribution)</p1><br>
+        <p2>Optimized for PC</p2>
+    </div>
+</div>
+
+    
+<!-- 네비게이션 바 HTML 수정 -->
+<div class="navbar" id="navbar">
+    <div class="logo-container">
+        <div class="logo" id="homeLogo">PARK JONG WON</div>
+        <div class="sub-logo">This portfolio is 100% self-produced.</div>
+    </div>
+    <div class="menu">
+        <a id="contactBtn">About</a>
+        <a id="portfolioBtn">Portfolio</a>
+        <a href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
+    </div>
+</div>
+    
+    
+    <!-- 콘텐츠 영역 -->
+    <div class="content" id="mainContent">
+        <!-- 포트폴리오 그리드 -->
+        <div class="portfolio" id="portfolioContent">
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write(`<div><img src="banner${i}.webp" data-id="${i}"></div>`);
+                }
+            </script>
+        </div>
+
+      <!-- 상세 페이지 -->
+    <div class="detail" id="detailContent" style="display: none;">
+        <img id="detailImage" src="" alt="">
+        <div class="navigation-controls">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <button id="backBtn">BACK</button>
+            <button class="nav-btn" id="nextBtn">→</button>
+        </div>
+    </div>
+
+        
+        <!-- About 페이지 -->
+        <div class="about" id="aboutContent" style="display: none;">
+            <img src="contact.png" alt="Contact Information">
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const splashScreen = document.getElementById('splashScreen');
+    const navbar = document.getElementById('navbar');
+    const mainContent = document.getElementById('mainContent');
+    const portfolioContent = document.getElementById('portfolioContent');
+    const detailContent = document.getElementById('detailContent');
+    const aboutContent = document.getElementById('aboutContent');
+    const portfolioBtn = document.getElementById('portfolioBtn');
+    const contactBtn = document.getElementById('contactBtn');
+    const homeLogo = document.getElementById('homeLogo');
+    let currentImageId = 1;
+    const totalImages = 20;
+
+    // 스플래시 화면 처리
+    setTimeout(() => {
+        splashScreen.style.opacity = "0";
+        setTimeout(() => {
+            splashScreen.style.display = "none";
+            document.body.style.backgroundColor = "white";
+            navbar.style.opacity = "1";
+            mainContent.style.opacity = "1";
+        }, 500);
+    }, 2700);
+
+    // 콘텐츠 전환 함수
+    function showContent(contentToShow) {
+        portfolioContent.style.display = 'none';
+        detailContent.style.display = 'none';
+        aboutContent.style.display = 'none';
+        contentToShow.style.display = contentToShow === portfolioContent ? 'grid' : 'block';
+    }
+
+    // 네비게이션 이벤트
+    portfolioBtn.addEventListener('click', () => showContent(portfolioContent));
+    contactBtn.addEventListener('click', () => showContent(aboutContent));
+    homeLogo.addEventListener('click', () => showContent(portfolioContent));
+
+    // 포트폴리오 이미지 클릭 이벤트
+    document.querySelectorAll('.portfolio img').forEach(img => {
+        img.addEventListener('click', function() {
+            currentImageId = parseInt(this.getAttribute('data-id'));
+            
+            // iframe으로 프로모션 페이지 불러오기
+detailContent.innerHTML = `
+    <div class="iframe-container">
+        <iframe id="promotionFrame" src="https://wonnyru7.github.io/portfolio_2025/promotion${currentImageId}/promotion${currentImageId}.html" 
+            style="width: 100%; border: none; overflow: hidden;">
+        </iframe>
+    </div>
+    <div class="navigation-controls">
+        <button class="nav-btn" id="prevBtn">←</button>
+        <button id="backBtn">BACK</button>
+        <button class="nav-btn" id="nextBtn">→</button>
+    </div>
+`;
+
+            
+            
+            
+// 절대경로 https://wonnyru7.github.io/portfolio_2025/promotion1/promotion1.html
+          
+            
+            
+            
+// CSS 스타일 추가
+const style = document.createElement('style');
+style.textContent = `
+    .detail-content {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iframe-container {
+        flex: 1;
+        margin-bottom: 60px; /* navigation-controls 높이만큼 여백 추가 */
+    }
+
+    .navigation-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff; /* 배경색 설정 */
+        padding: 10px;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-btn, #backBtn {
+        margin: 0 10px;
+        padding: 5px 15px;
+    }
+`;
+document.head.appendChild(style);
+
+
+ // JavaScript 부분
+function setupIframeMessageListener() {
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'setHeight') {
+            const iframe = document.getElementById('promotionFrame');
+            if (iframe) {
+                const height = event.data.height + 0;
+                iframe.style.height = `${height}px`;
+            }
+        }
+    });
+}
+
+// 버튼 이벤트 리스너 추가
+document.getElementById('backBtn').addEventListener('click', () => {
+    showContent(portfolioContent);
+    window.scrollTo(0, 0);
+});
+
+// 이전 버튼 클릭 이벤트
+document.getElementById('prevBtn').addEventListener('click', () => {
+    currentImageId = (currentImageId - 2 + totalImages) % totalImages + 1;
+    const iframe = detailContent.querySelector('iframe');
+    
+    // iframe src 변경 전에 높이 초기화
+    iframe.style.height = 'auto';
+    iframe.src = `https://wonnyru7.github.io/portfolio_2025/promotion${currentImageId}/promotion${currentImageId}.html`;
+    
+    // iframe 로드 완료 후 처리
+    iframe.onload = function() {
+        window.scrollTo(0, 0);
+        iframe.contentWindow.scrollTo(0, 0);
+        setupIframeMessageListener(); // 메시지 리스너 재설정
+        iframe.contentWindow.location.reload(true);
+    };
+});
+
+// 다음 버튼 클릭 이벤트
+document.getElementById('nextBtn').addEventListener('click', () => {
+    currentImageId = (currentImageId % totalImages) + 1;
+    const iframe = detailContent.querySelector('iframe');
+    
+    // iframe src 변경 전에 높이 초기화
+    iframe.style.height = 'auto';
+    iframe.src = `https://wonnyru7.github.io/portfolio_2025/promotion${currentImageId}/promotion${currentImageId}.html`;
+    
+    // iframe 로드 완료 후 처리
+    iframe.onload = function() {
+        window.scrollTo(0, 0);
+        iframe.contentWindow.scrollTo(0, 0);
+        setupIframeMessageListener(); // 메시지 리스너 재설정
+        iframe.contentWindow.location.reload(true);
+    };
+});
+
+showContent(detailContent);
+setupIframeMessageListener(); // 초기 메시지 리스너 설정
+
+        });
+    });
+
+
+      
+      
+
+    // 키보드 이벤트
+    document.addEventListener('keydown', function(e) {
+        if (detailContent.style.display !== 'none') {
+            const iframe = detailContent.querySelector('iframe');
+            if (e.key === 'ArrowLeft') {
+                currentImageId = (currentImageId - 2 + totalImages) % totalImages + 1;
+                iframe.src = `https://wonnyru7.github.io/portfolio_2025/promotion${currentImageId}/promotion${currentImageId}.html`;
+            }
+            if (e.key === 'ArrowRight') {
+                currentImageId = (currentImageId % totalImages) + 1;
+                iframe.src = `https://wonnyru7.github.io/portfolio_2025/promotion${currentImageId}/promotion${currentImageId}.html`;
+            }
+        }
+    });
+});
+
+    </script>
+
+</body>
+</html>
