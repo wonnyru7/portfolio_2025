@@ -10,9 +10,9 @@
         
 @font-face {
     font-family: 'Pragmatica';
-    src: url('./fonts/Pragmatica-Regular.woff2') format('woff2'),
-         url('./fonts/Pragmatica-Regular.woff') format('woff'),
-         url('./fonts/Pragmatica-Regular.ttf') format('truetype');
+    src: url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Regular.woff2') format('woff2'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Regular.woff') format('woff'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -20,9 +20,9 @@
 
 @font-face {
     font-family: 'Pragmatica';
-    src: url('./fonts/Pragmatica-Bold.woff2') format('woff2'),
-         url('./fonts/Pragmatica-Bold.woff') format('woff'),
-         url('./fonts/Pragmatica-Bold.ttf') format('truetype');
+    src: url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Bold.woff2') format('woff2'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Bold.woff') format('woff'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/Pragmatica-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -30,9 +30,9 @@
 
 @font-face {
     font-family: 'Pragmatica Extended';
-    src: url('./fonts/PragmaticaExtended-Bold.woff2') format('woff2'),
-         url('./fonts/PragmaticaExtended-Bold.woff') format('woff'),
-         url('./fonts/PragmaticaExtended-Bold.ttf') format('truetype');
+    src: url('https://wonnyru7.github.io/portfolio_2025/font/PragmaticaExtended-Bold.woff2') format('woff2'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/PragmaticaExtended-Bold.woff') format('woff'),
+         url('https://wonnyru7.github.io/portfolio_2025/font/PragmaticaExtended-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -72,24 +72,20 @@ body {
 
 .splash-screen h1 {
     font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 170px;
+    font-size: 8.5vw;
     font-weight: bold;
     color: white;
     opacity: 0;
     animation: fadeInText 1.3s ease-in-out forwards 0.1s;
     line-height: 1;
-      margin-bottom: -20px;
+      margin-bottom: 0px;
 }
         
-        
-        
-        
-        
-        
+
         
 .splash-screen h2 {
     font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 180px;
+    font-size: 8.5vw;
     font-weight: bold;
     color: white;
     opacity: 0;
@@ -131,21 +127,21 @@ body {
         
 .splash-screen p1 {
     font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 22px;
+    font-size: 1.2vw;
     font-weight: 100;
     color: white;
     opacity: 0;
-    margin-top: 20px;
+    margin-top: 30px;
     animation: fadeInTextUp 1s ease-in-out forwards 0.7s;
 }
         
 .splash-screen p2 {
     font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 16px;
+    font-size: 1.2vw;
     font-weight: 100;
     color: white;
     opacity: 0;
-    margin-top: 20px;
+    margin-top: 25px;
     animation: fadeInTextUp 1s ease-in-out forwards 1s;
 }        
 
@@ -192,7 +188,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 40px;
+    font-size: 2.5vw;
     font-weight: bold;
     text-align: left;
     cursor: pointer;
@@ -274,11 +270,44 @@ body {
     text-align: left;
     animation: fadeInLogo 2s ease-out forwards 0.5s;
 }
+
+
+.menu {
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+}
+
+.nav-item {
+    font-size: 22px; /* 기본 글자 크기 */
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: #000; /* 글자 색상 */
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+    padding: 5px 0; /* 위 아래 패딩 */
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* 중앙 정렬 */
+    bottom: -1px; /* 텍스트 아래 위치 */
+    width: 0; /* 초기 너비를 0으로 설정 */
+    height: 2px; /* 줄의 두께 */
+    background-color: #000000; /* 줄의 색상 */
+    transition: width 0.3s ease, left 0.3s ease; /* 애니메이션 효과 */
+    transform: translateX(-50%); /* 중앙 정렬 조정 */
+}
+
+.nav-item:hover::after {
+    width: 100%; /* 마우스 오버 시 너비를 100%로 변경 */
+    left: 50%; /* 중앙 정렬 */
+}
+
+
+
         
 /* 콘텐츠 영역 */
 .content {
     max-width: 1800px;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-left: 100px;
     padding-right: 100px;
     margin: 0 auto;
@@ -298,18 +327,24 @@ body {
     animation: fadeInBanners 0.8s ease-out forwards 0.8s;
 }
 
+.portfolio div {
+    overflow: hidden; /* 부모 요소가 오버플로우를 숨기도록 설정 */
+    position: relative; /* 자식 요소의 위치를 상대적으로 설정 */
+}
+
 .portfolio img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* 변환 효과 추가 */
     display: block;
 }
 
 .portfolio img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* 이미지 확대 효과 */
+    cursor: pointer; /* 손 모양 커서 추가 */
 }
+
 
 /* 디테일 페이지 */
 .detail {
@@ -327,6 +362,16 @@ body {
     display: block;
     margin: 0 auto;
 }
+        
+.detail {
+    overflow: hidden !important;
+}
+
+.detail iframe {
+    overflow-y: scroll;
+}
+
+
 
 /* 백 버튼 */
 #backBtn {
@@ -451,11 +496,12 @@ body {
         <div class="sub-logo">This portfolio is 100% self-produced.</div>
     </div>
     <div class="menu">
-        <a id="contactBtn">About</a>
-        <a id="portfolioBtn">Portfolio</a>
-        <a href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
+        <a class="nav-item" id="contactBtn">About</a>
+        <a class="nav-item" id="portfolioBtn">Portfolio</a>
+        <a class="nav-item" href="http://naver.me/Gxkq8o6Y" target="_blank">Download PDF</a>
     </div>
 </div>
+
     
     
     <!-- 콘텐츠 영역 -->
@@ -469,6 +515,9 @@ body {
             </script>
         </div>
 
+
+
+        
       <!-- 상세 페이지 -->
     <div class="detail" id="detailContent" style="display: none;">
         <img id="detailImage" src="" alt="">
@@ -486,21 +535,29 @@ body {
         </div>
     </div>
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const splashScreen = document.getElementById('splashScreen');
     const navbar = document.getElementById('navbar');
     const mainContent = document.getElementById('mainContent');
     const portfolioContent = document.getElementById('portfolioContent');
     const detailContent = document.getElementById('detailContent');
     const aboutContent = document.getElementById('aboutContent');
-    const detailImage = document.getElementById('detailImage');
-    const backBtn = document.getElementById('backBtn');
     const portfolioBtn = document.getElementById('portfolioBtn');
     const contactBtn = document.getElementById('contactBtn');
     const homeLogo = document.getElementById('homeLogo');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
     let currentImageId = 1;
     const totalImages = 20;
 
@@ -515,26 +572,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     }, 2700);
 
-    // 이미지 변경 함수
-    function changeImage(direction) {
-        let newId = direction === 'next' 
-            ? (currentImageId % totalImages) + 1 
-            : (currentImageId - 2 + totalImages) % totalImages + 1;
-        
-        currentImageId = newId;
-        const fileExtension = (newId === 13 || newId === 17) ? 'jpg' : 'webp';
-        detailImage.src = `promotion${newId}.${fileExtension}`;
-        detailImage.alt = `promotion${newId}`;
-        
-        // 이미지 로드 후 스크롤 최상단으로 이동
-        detailImage.onload = function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        };
-    }
-
     // 콘텐츠 전환 함수
     function showContent(contentToShow) {
         portfolioContent.style.display = 'none';
@@ -544,35 +581,164 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 네비게이션 이벤트
-    portfolioBtn.addEventListener('click', () => showContent(portfolioContent));
-    contactBtn.addEventListener('click', () => showContent(aboutContent));
-    homeLogo.addEventListener('click', () => showContent(portfolioContent));
+portfolioBtn.addEventListener('click', () => {
+    showContent(portfolioContent);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드러운 스크롤 효과
+    });
+});
 
-    // 이전/다음 버튼 이벤트
-    prevBtn.addEventListener('click', () => changeImage('prev'));
-    nextBtn.addEventListener('click', () => changeImage('next'));
+contactBtn.addEventListener('click', () => {
+    showContent(aboutContent);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드러운 스크롤 효과
+    });
+});
+
+homeLogo.addEventListener('click', () => {
+    showContent(portfolioContent);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드러운 스크롤 효과
+    });
+});
+
 
     // 포트폴리오 이미지 클릭 이벤트
     document.querySelectorAll('.portfolio img').forEach(img => {
         img.addEventListener('click', function() {
             currentImageId = parseInt(this.getAttribute('data-id'));
-            const fileExtension = (currentImageId === 13 || currentImageId === 17) ? 'jpg' : 'webp';
-            detailImage.src = `promotion${currentImageId}.${fileExtension}`;
-            detailImage.alt = `promotion${currentImageId}`;
-            showContent(detailContent);
+            
+            // iframe으로 프로모션 페이지 불러오기
+detailContent.innerHTML = `
+    <div class="iframe-container">
+        <iframe id="promotionFrame" src="promotion${currentImageId}/promotion${currentImageId}.html" 
+            style="width: 100%; border: none; overflow: hidden;">
+        </iframe>
+    </div>
+    <div class="navigation-controls">
+        <button class="nav-btn" id="prevBtn">←</button>
+        <button id="backBtn">BACK</button>
+        <button class="nav-btn" id="nextBtn">→</button>
+    </div>
+`;
+
+            
+            
+            
+// 절대경로 https://wonnyru7.github.io/portfolio_2025/promotion1/promotion1.html
+          
+            
+            
+            
+// CSS 스타일 추가
+const style = document.createElement('style');
+style.textContent = `
+    .detail-content {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iframe-container {
+        flex: 1;
+        margin-bottom: 60px; /* navigation-controls 높이만큼 여백 추가 */
+    }
+
+    .navigation-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff; /* 배경색 설정 */
+        padding: 10px;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-btn, #backBtn {
+        margin: 0 10px;
+        padding: 5px 15px;
+    }
+`;
+document.head.appendChild(style);
+
+
+ // JavaScript 부분
+function setupIframeMessageListener() {
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'setHeight') {
+            const iframe = document.getElementById('promotionFrame');
+            if (iframe) {
+                const height = event.data.height + 0;
+                iframe.style.height = `${height}px`;
+            }
+        }
+    });
+}
+
+// 버튼 이벤트 리스너 추가
+document.getElementById('backBtn').addEventListener('click', () => {
+    showContent(portfolioContent);
+    window.scrollTo(0, 0);
+});
+
+// 이전 버튼 클릭 이벤트
+document.getElementById('prevBtn').addEventListener('click', () => {
+    currentImageId = (currentImageId - 2 + totalImages) % totalImages + 1;
+    const iframe = detailContent.querySelector('iframe');
+
+    // iframe src 변경 전에 높이 초기화
+    iframe.style.height = 'auto';
+    
+    // src 변경 시, 현재 ID와 비교하여 다를 경우에만 변경
+    if (currentImageId !== parseInt(iframe.getAttribute('data-id'))) {
+        iframe.src = `promotion${currentImageId}/promotion${currentImageId}.html`;
+        iframe.setAttribute('data-id', currentImageId); // 현재 ID 저장
+    }
+});
+
+// 다음 버튼 클릭 이벤트
+document.getElementById('nextBtn').addEventListener('click', () => {
+    currentImageId = (currentImageId % totalImages) + 1;
+    const iframe = detailContent.querySelector('iframe');
+
+    // iframe src 변경 전에 높이 초기화
+    iframe.style.height = 'auto';
+    
+    // src 변경 시, 현재 ID와 비교하여 다를 경우에만 변경
+    if (currentImageId !== parseInt(iframe.getAttribute('data-id'))) {
+        iframe.src = `promotion${currentImageId}/promotion${currentImageId}.html`;
+        iframe.setAttribute('data-id', currentImageId); // 현재 ID 저장
+    }
+});
+
+
+showContent(detailContent);
+setupIframeMessageListener(); // 초기 메시지 리스너 설정
+
         });
     });
 
-    // 뒤로가기 버튼
-    backBtn.addEventListener('click', () => {
-        showContent(portfolioContent);
-    });
 
-    // 키보드 이벤트 추가
+      
+      
+
+    // 키보드 이벤트
     document.addEventListener('keydown', function(e) {
         if (detailContent.style.display !== 'none') {
-            if (e.key === 'ArrowLeft') changeImage('prev');
-            if (e.key === 'ArrowRight') changeImage('next');
+            const iframe = detailContent.querySelector('iframe');
+            if (e.key === 'ArrowLeft') {
+                currentImageId = (currentImageId - 2 + totalImages) % totalImages + 1;
+                iframe.src = `promotion${currentImageId}/promotion${currentImageId}.html`;
+            }
+            if (e.key === 'ArrowRight') {
+                currentImageId = (currentImageId % totalImages) + 1;
+                iframe.src = `promotion${currentImageId}/promotion${currentImageId}.html`;
+            }
         }
     });
 });
