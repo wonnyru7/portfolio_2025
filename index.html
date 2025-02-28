@@ -750,7 +750,7 @@ function setupIframeMessageListener() {
         if (event.data.type === 'setHeight') {
             const iframe = document.getElementById('promotionFrame');
             if (iframe) {
-                const height = event.data.height + 0;
+                const height = event.data.height + 1;
                 iframe.style.height = `${height}px`;
             }
         }
