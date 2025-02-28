@@ -126,8 +126,8 @@ body {
         
         
 .splash-screen p1 {
-    font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 1.2vw;
+    font-family: 'Pragmatic', sans-serif;
+    font-size: 1vw;
     font-weight: 100;
     color: white;
     opacity: 0;
@@ -136,14 +136,20 @@ body {
 }
         
 .splash-screen p2 {
-    font-family: 'Pragmatica Extended', sans-serif;
-    font-size: 1.2vw;
-    font-weight: 100;
+    font-family: 'Pragmatica', sans-serif;
+    font-size: 1vw;
+    font-weight:100;
     color: white;
     opacity: 0;
     margin-top: 25px;
     animation: fadeInTextUp 1s ease-in-out forwards 1s;
 }        
+
+
+
+
+
+
 
 /* 애니메이션 */
 @keyframes fadeInText {
@@ -168,6 +174,11 @@ body {
     }
 }
 
+
+
+
+
+
 /* 네비게이션 바 */
 .navbar {
     max-width: 1800px;
@@ -184,7 +195,6 @@ body {
     padding: 0 100px;
     z-index: 10;
     opacity: 0;
-    transition: opacity 0.5s ease-out;
 }
 
 .navbar .logo {
@@ -192,29 +202,29 @@ body {
     font-weight: bold;
     text-align: left;
     cursor: pointer;
-    animation: fadeInLogo 2s ease-out forwards 0.5s;
+    animation: fadeInLogo 3s ease-out forwards 1s;
 }
 
 .navbar .menu {
     display: flex;
-    gap: 20px;
-    animation: fadeInMenu 2s ease-out forwards 0.8s;
+    gap: 46px;
+    animation: fadeInMenu 3s ease-out forwards 1s;
 }
 
 .navbar .menu a {
-    font-size: 22px;
+    font-size: 26px;
     text-decoration: none;
     color: #000000;
     cursor: pointer;
 }
 
 @keyframes fadeInLogo {
-    from { opacity: 0; transform: translateY(-20px); }
+    from { opacity: 0; transform: translateY(60px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInMenu {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -222,6 +232,66 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+
+
+
+
+        
+/* CSS 추가 */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: -5px; /* 간격 조정 */
+}
+
+.sub-logo {
+    font-family: 'Pragmatica', sans-serif;
+    font-size: 14px;
+    top: 0px;
+    text-align: left;
+}
+
+
+.menu {
+    font-family: 'Pragmatica', sans-serif;
+    font-weight: 200;
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+}
+
+.nav-item {
+    font-size: 22px; /* 기본 글자 크기 */
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: #000; /* 글자 색상 */
+    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
+    padding: 5px 0; /* 위 아래 패딩 */
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* 중앙 정렬 */
+    bottom: 50%; /* 텍스트 아래 위치 */
+    width: 0; /* 초기 너비를 0으로 설정 */
+    height: 4.5px; /* 줄의 두께 */
+    background-color: #002eff; /* 줄의 색상 */
+    transition: width 0.3s ease, left 0.3s ease; /* 애니메이션 효과 */
+    transform: translateX(-50%); /* 중앙 정렬 조정 */
+}
+
+.nav-item:hover::after {
+    width: 100%; /* 마우스 오버 시 너비를 100%로 변경 */
+    left: 50%; /* 중앙 정렬 */
+}
+
 
 /* 네비게이션 컨트롤 */
 .navigation-controls {
@@ -247,59 +317,6 @@ body {
 .nav-btn:hover {
     transform: scale(1.2);
 }
-        
-/* CSS 추가 */
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.logo {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    animation: fadeInLogo 2s ease-out forwards 0.5s;
-    margin-bottom: -5px; /* 간격 조정 */
-}
-
-.sub-logo {
-    font-family: 'Pragmatica', sans-serif;
-    font-size: 14px;
-    text-align: left;
-    animation: fadeInLogo 2s ease-out forwards 0.5s;
-}
-
-
-.menu {
-    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
-}
-
-.nav-item {
-    font-size: 22px; /* 기본 글자 크기 */
-    text-decoration: none; /* 기본 밑줄 제거 */
-    color: #000; /* 글자 색상 */
-    position: relative; /* 자식 요소의 절대 위치를 설정하기 위해 relative 위치 설정 */
-    padding: 5px 0; /* 위 아래 패딩 */
-}
-
-.nav-item::after {
-    content: '';
-    position: absolute;
-    left: 50%; /* 중앙 정렬 */
-    bottom: -1px; /* 텍스트 아래 위치 */
-    width: 0; /* 초기 너비를 0으로 설정 */
-    height: 2px; /* 줄의 두께 */
-    background-color: #000000; /* 줄의 색상 */
-    transition: width 0.3s ease, left 0.3s ease; /* 애니메이션 효과 */
-    transform: translateX(-50%); /* 중앙 정렬 조정 */
-}
-
-.nav-item:hover::after {
-    width: 100%; /* 마우스 오버 시 너비를 100%로 변경 */
-    left: 50%; /* 중앙 정렬 */
-}
 
 
 
@@ -324,7 +341,7 @@ body {
     gap: 0;
     margin: 0;
     opacity: 0;
-    animation: fadeInBanners 0.8s ease-out forwards 0.8s;
+    animation: fadeInBanners 1s ease-out forwards 0.1s;
 }
 
 .portfolio div {
@@ -408,42 +425,82 @@ body {
     height: auto;
 }
 
+
+
+
+
+
+
+
+
+
 /* 모바일 반응형 */
 @media (max-width: 768px) {
+
+
+
     /* 네비게이션 */
     .navbar {
+        display: flex;
+        flex-direction: column;
         padding: 0 30px;
         height: 80px;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .navbar .logo {
-        font-size: 20px;
+        font-size: 12px;
+        padding-top: 10px;
     }
 
     .navbar .menu a {
-        font-size: 18px;
+        font-size: 28px;
+        gap: 45px;
     }
+
+    .navbar .sub-logo {
+        display: none;
+    }
+
 
     /* 스플래시 화면 */
     .splash-screen h1 {
-        font-size: 20px;
-        padding-bottom: 30px;
+        font-size: 18px;
+        padding-bottom: 20px;
     }
+
     .splash-screen h2 {
         font-size: 50px;
         padding-bottom: 20px;
     }
 
     .splash-screen p1 {
-        font-size: 14px;
+        font-size: 22px;
         padding-top: 10px;
     }
     
     .splash-screen p2 {
-        font-size: 14px;
+        font-size: 22px;
 
     }
 
+    .splash-screen h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 12px;
+    background-color: #0045FF !important;
+    animation: drawLine 1s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.8s; /* 1.3s에서 1.8s로 증가 */
+    z-index: 2;
+    }
+
+
+
+    
     /* 콘텐츠 영역 */
     .content {
         padding-top: 80px;
@@ -473,10 +530,17 @@ body {
         margin: 0;
         padding
 
-        
-
+    } 
+}
     </style>
 </head>
+
+
+
+
+
+
+
 <body>
 <!-- 스플래시 화면 -->
 <div class="splash-screen" id="splashScreen">
@@ -673,7 +737,7 @@ function setupIframeMessageListener() {
         if (event.data.type === 'setHeight') {
             const iframe = document.getElementById('promotionFrame');
             if (iframe) {
-                const height = event.data.height + 1;
+                const height = event.data.height + 0;
                 iframe.style.height = `${height}px`;
             }
         }
