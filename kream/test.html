@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Forward Spin</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      perspective: 800px; /* 입체감 */
+    }
+    img {
+      width: 400px; /* 크기 조절 가능 */
+      transform-style: preserve-3d;
+      animation: spin 2s linear infinite; /* 무한 루프 회전 */
+    }
+    @keyframes spin {
+      from { transform: rotateX(0deg); }
+      to   { transform: rotateX(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <img src="kv2.png" alt="3D 회전 이미지">
+</body>
+</html>

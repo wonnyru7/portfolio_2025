@@ -1,0 +1,254 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<!-- CSS 파일들 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/reset.min.css">
+
+<!-- JavaScript 파일들 -->
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/swiper-bundle-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wonnyru7/portfolio_2025@main/css/csl-event.js"></script>
+    
+    
+    
+    <style>.csl {display: none;padding-top: 1000px;max-width:400px;overflow:hidden;}</style>
+    <script>
+        if (document.getElementById("root") == undefined) {
+            window.addEventListener("DOMContentLoaded", () => {
+                pjw_onStart();
+            })
+        }
+    </script>
+</head>
+<body>
+<style>	
+	@keyframes ball1{
+   0%{transform:translate(0,0);}
+   100%{transform:translate(0,-15px);}
+}  		
+	.csl {display: none;padding-top: 1000px;max-width:400px;overflow:hidden;}
+	.csl-fixedCategory .csl-fc-wrap .csl-fc-list p { font-weight: 400; }
+	.csl .csl-scroll-start{opacity:0;}
+	.csl .csl-scroll-start.csl-scroll-right{transform : translateX(-15px)}
+	.csl .csl-scroll-start.csl-scroll-up{transform : translateY(15px)}
+	.csl .csl-scroll-start.csl-scroll-left{transform : translateX(15px)}
+	.csl .csl-scroll-start.csl-scroll-down{transform: translateY(-15px);}	
+	.csl .csl-blink {
+    animation: csl-blink 1.5s infinite;		
+	}
+	
+	.csl .main-visual-parallax-on-select2 .bg {
+			transition: transform 0s linear !important;
+		}	
+
+	.csl .csl-parallax .csl-parallax-bg {
+			transition: transform 0s linear !important;
+		}	
+	
+		
+	
+
+	    .csl-doongdoong  { animation: cslDoongDoong 4s infinite; } @keyframes cslDoongDoong { from { transform: translateY(4%); } 50% { transform: translateY(0%); } to { transform: translateY(4%); } } 
+
+	
+
+
+
+    
+</style>
+
+
+<style>
+    /* kv2.png에만 3D 회전 적용 */
+    img.spin {
+      transform-style: preserve-3d;
+      animation: spin 3s ease-in-out infinite;
+      display: block;
+    }
+  
+    /* 반바퀴(180°) 돌고 0.5초 멈춘 뒤 복귀 */
+    @keyframes spin {
+      0%   { transform: rotateY(0deg); }
+      40%  { transform: rotateY(180deg); }  /* 반바퀴 회전 (약 1.4초 지점) */
+      40%  { transform: rotateY(180deg); }  /* 0.5초 멈춤 */
+      100% { transform: rotateY(0deg); }    /* 다시 제자리 */
+    }
+  </style>
+
+<style>
+    /* kv2.png에만 3D 회전 적용 */
+    img.spin2 {
+      transform-style: preserve-3d;
+      animation: spin 3.5s ease-in-out infinite;
+      display: block;
+    }
+  
+    /* 반바퀴(180°) 돌고 0.5초 멈춘 뒤 복귀 */
+    @keyframes spin {
+      0%   { transform: rotateY(0deg); }
+      40%  { transform: rotateY(180deg); }  /* 반바퀴 회전 (약 1.4초 지점) */
+      40%  { transform: rotateY(180deg); }  /* 0.5초 멈춤 */
+      100% { transform: rotateY(0deg); }    /* 다시 제자리 */
+    }
+  </style>
+
+   <main class="csl">	
+	   
+
+
+ 
+        <section class="content">	 
+            <div class="fullImg"><img src="kv-bg.jpg"></div>
+
+
+                <div class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.7s;  transition-duration: 1.5s;">
+				<img class="absolute csl-doongdoong" img src="kv6.png" style="width:100%; top: -6%; left: 0%; z-index: 0;"></div>
+             
+        
+    
+       
+                <div class="absolute" style="width:100%;left:0;top:0;"></div>
+                    <img src="kv-0.png" class="absolute csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.5s;  transition-duration: 1.3s; z-index: 2;">
+                    <img src="kv1.png" class="absolute csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.1s;  transition-duration: 2s; z-index: 3;">			
+                    <img src="kv2.png" class="absolute spin" style="width: 100%; bottom:0; z-index: 11;">
+                
+                    <img src="kv3.png" class="absolute csl-scroll-down csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.5s;  transition-duration: 1.3s; z-index: 2;">			
+                    <img src="kv5.png" class="absolute csl-scroll-up csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.6s;  transition-duration: 1.3s; z-index: 2;">
+
+                
+                <div style="position: absolute; z-index: 5; transition-delay: 1.2s;"><img src="kv1-1.png" class="csl-blink"></div>
+  
+
+        
+            
+
+            
+                <section class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 1s;">
+                    <div class="csl-carousel csl-carousel-right" style="position: absolute; top:0%"> <!—left, right, up, down—>
+                            <img src="kv-c1.png">
+                            <img src="kv-c1.png">
+                            <img src="kv-c1.png">
+                            <img src="kv-c1.png">
+                            <img src="kv-c1.png">
+                    </div>
+                </section>
+
+                 <style>.csl .csl-carousel img{width: 115%;animation-duration: 40s!important;}</style> <!— 이미지 width값 설정필요 —>
+			
+
+    
+
+            
+                
+                 <section class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 0.5s; z-index: 1;">
+                        <div class="csl-carousel333 csl-carousel-left"  style="position: absolute; top:2%"> <!—left, right, up, down—>
+                            <img src="kv-c2.png">
+                            <img src="kv-c2.png">
+                            <img src="kv-c2.png">
+                            <img src="kv-c2.png">
+                            <img src="kv-c2.png">
+                        </div>
+                </section>
+                     <style>.csl .csl-carousel333 img{width: 200%;animation-duration: 40s!important;}</style> <!— 이미지 width값 설정필요 —>
+		
+        
+                
+
+                     <section class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.5s;  transition-duration: 1.2s; z-index: 0;">
+                        <div class="csl-carousel33 csl-carousel-up"  style="position: absolute; top:5%"> <!—left, right, up, down—>
+                            <img src="kv-c3.png">
+                            <img src="kv-c3.png">
+                            <img src="kv-c3.png">
+                            <img src="kv-c3.png">
+                            <img src="kv-c3.png">
+                        </div>
+                </section>
+                     <style>.csl .csl-carousel33 img{width: 100%;animation-duration: 60s!important;}</style> <!— 이미지 width값 설정필요 —>
+
+                
+    
+
+                     <section class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 0.7s; z-index: 3;">
+                        <div class="csl-carousel3 csl-carousel-up"  style="position: absolute; top:5%"> <!—left, right, up, down—>
+                            <img src="kv-c4.png">
+                            <img src="kv-c4.png">
+                            <img src="kv-c4.png">
+                            <img src="kv-c4.png">
+                            <img src="kv-c4.png">
+                        </div>
+                </section>
+                     <style>.csl .csl-carousel3 img{width: 100%;animation-duration: 25s!important;}</style> <!— 이미지 width값 설정필요 —>
+		
+
+
+        <div class="absolute csl-scroll-custom csl-scroll-custom-right csl-scroll-start" style="width:100%;left:0%;top:0%; z-index: 2;"> 
+            <div><img src="kv4.png"></div>
+
+        </section>  
+
+
+
+
+	   
+    
+
+    
+	
+	
+	
+	
+<script>
+        function pjw_onStart() {
+         
+            if (window.csl == undefined) {
+                window.csl = new ContentScriptLibrary();
+                window.csl.custom = () => {
+                    // custom Event
+                }
+ 	
+	
+				//첫 화면 자동 스크롤 시작
+				document.querySelectorAll('.csl-scroll-start').forEach((item)=>{
+				item.classList.add('csl-scroll-on');
+				});
+				//첫 화면 자동 스크롤 끝
+            }
+        }
+        function pjw_onEnd() {if (window.csl != undefined) {window.removeEventListener("scroll", window.csl.custom );window.removeEventListener("resize", window.csl.custom );window.csl.onEnd();window.csl = undefined;}}
+    </script>
+    
+    
+    
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+    }
+    
+    // 페이지 로드 시
+    window.addEventListener('load', sendHeight);
+    
+    // DOM 변경 감지
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true
+    });
+    
+    // 이미지 로드 완료 시
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', sendHeight);
+    });
+</script>
+    
+    
+    
+</body>
+
+</html>
