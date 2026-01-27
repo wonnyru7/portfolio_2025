@@ -56,9 +56,55 @@
 	    .csl-doongdoong  { animation: cslDoongDoong 3s infinite; } @keyframes cslDoongDoong { from { transform: translateY(3%); } 50% { transform: translateY(0%); } to { transform: translateY(3%); } } 
 	    .csl-doongdoong1  { animation: cslDoongDoong 2.6s infinite; } @keyframes cslDoongDoong { from { transform: translateY(3%); } 50% { transform: translateY(0%); } to { transform: translateY(3%); } } 
 
-	
+
+
+        
+        .slider-wrap {
+            width: 600px;    
+            overflow: hidden;
+            }
+
+            .slider-track {
+            display: flex;
+            }
+
+            .slide {
+            width: 180px;        /* ← 슬라이드 1개 크기 */
+            flex-shrink: 0;
+            }
+
+            .slide img {
+            width: 100%;
+            display: block;
+            }
     
+
+
+
+            .v-slider-wrap {
+            width: 340px;     /* ← 가로 크기 네가 조절 */
+            height: 45px;    /* ← 세로 영역 네가 조절 */
+            overflow: hidden;
+            }
+
+            .v-slider-track {
+            display: flex;
+            flex-direction: column;
+            }
+
+            .v-slide {
+            height: 40px;     /* ← 한 장 높이 */
+            flex-shrink: 0;
+            }
+
+            .v-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            }
 </style>
+
 
 
 
@@ -69,7 +115,7 @@
 
 
  
-        <section class="content">	 
+        <section class="content" style="overflow: hidden;">	 
             <div class="fullImg"><img src="kv-bg.jpg"></div>
 
 
@@ -81,6 +127,7 @@
 
     
 
+            
 
             
        
@@ -126,7 +173,7 @@
 
 
                      <section class="csl-scroll csl-scroll-start" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 0.7s; z-index: 3;">
-                        <div class="csl-carousel3 csl-carousel-down"  style="position: absolute; top:5%"> <!—left, right, up, down—>
+                        <div class="csl-carousel3 csl-carousel-down"  style="position: absolute; top:5%;"> <!—left, right, up, down—>
                             <img src="kv-c2.png">
                             <img src="kv-c2.png">
                             <img src="kv-c2.png">
@@ -143,23 +190,104 @@
 
 
 
-	   
+
+        <section class="content">	 
+            <div class="fullImg"><img src="c1-bg.jpg"></div>
+            <div class="absolute" style="width:100%;left:0;top:0;"></div>
+
+                <img src="c1-1.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 1s; z-index: 11;">
+                <img src="c1-2.png" class="absolute csl-scroll-up" style="width:100%;left:0;bottom:0;transition-delay: 0.4s;  transition-duration: 1s; z-index: 11;">		   
+                <img src="c1-3.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.6s;  transition-duration: 1.5s; z-index: 11;">		   
+                        
+
+
+        </section>  
     
 
+
+
+
+
+
+
+
+        
+
+            <section class="content">
+                
+                <div class="fullImg"><img src="c2-bg.jpg"></div>
+                <div class="absolute" style="width:100%;left:0;top:0;"></div>
+                    
+                <img src="c2-1.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 1s; z-index: 11;">
+                <img src="c2-2.png" class="absolute csl-scroll-up" style="width:100%;left:0;bottom:0;transition-delay: 0.4s;  transition-duration: 1s; z-index: 11;">		   
+                <img src="c2-3.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.6s;  transition-duration: 1.5s; z-index: 11;">		   
+                            
+                        
+                
+                <div class="absolute" style="width:100%;left:0%;top:40%; z-index: 14;">		
+                    <div class="slider-wrap">
+                        <div class="slider-track">
+                          <div class="slide"><img src="c1-s1.png"></div>
+                          <div class="slide"><img src="c1-s2.png"></div>
+                          <div class="slide"><img src="c1-s3.png"></div>
+                        </div>
+                      </div>
+                    </div>
+
+            </section>			
+
+
+
+
+
+
+
+
+            <section class="content">
+                
+                <div class="fullImg"><img src="c3-bg.jpg"></div>
+                <div class="absolute" style="width:100%;left:0;top:0;"></div>
+                    
+                <img src="c3-1.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.3s;  transition-duration: 1s; z-index: 11;">
+                <img src="c3-2.png" class="absolute csl-scroll-up" style="width:100%;left:0;bottom:0;transition-delay: 0.4s;  transition-duration: 1s; z-index: 11;">		   
+                <img src="c3-3.png" class="absolute csl-scroll" style="width:100%;left:0;bottom:0;transition-delay: 0.6s;  transition-duration: 1.5s; z-index: 11;">		   
+                <img src="c3-4.png" class="absolute csl-scroll-up" style="width:100%;left:0;bottom:0;transition-delay: 1.5s;  transition-duration: 1.5s; z-index: 11;">		   
+                
+                <div class="absolute" style="width:100%;left:7.5%;top:26.9%; z-index: 14;">		     
+                <div class="v-slider-wrap">
+                    <div class="v-slider-track">
+                      <div class="v-slide"><img src="c3-s1.png"></div>
+                      <div class="v-slide"><img src="c3-s2.png"></div>
+                      <div class="v-slide"><img src="c3-s3.png"></div>
+                    </div>
+                  </div>       
+                </div>   
+
+            </section>			
+
+
+
+
+
+        </section>  
     
+
+
 	
 	
 	
 	
 <script>
+
+    
         function pjw_onStart() {
          
             if (window.csl == undefined) {
-                window.csl = new ContentScriptLibrary();
+                window.csl = new ContentScriptLibrary();r
                 window.csl.custom = () => {
                     // custom Event
                 }
- 	
+
 	
 				//첫 화면 자동 스크롤 시작
 				document.querySelectorAll('.csl-scroll-start').forEach((item)=>{
@@ -171,7 +299,7 @@
         function pjw_onEnd() {if (window.csl != undefined) {window.removeEventListener("scroll", window.csl.custom );window.removeEventListener("resize", window.csl.custom );window.csl.onEnd();window.csl = undefined;}}
     </script>
     
-    
+
     
 <script>
     function sendHeight() {
@@ -179,6 +307,10 @@
         window.parent.postMessage({ type: 'setHeight', height: height }, '*');
     }
     
+    csl.swiper2(1001, 2.2);
+    csl.swiper2(101, 1.05);
+
+
     // 페이지 로드 시
     window.addEventListener('load', sendHeight);
     
@@ -196,8 +328,54 @@
     });
 </script>
     
+
+
+<script>
+    window.addEventListener('load', () => {
+      const track = document.querySelector('.slider-track');
+      const slide = document.querySelector('.slide');
+  
+      if (!track || !slide) return;
+  
+      const slideWidth = slide.getBoundingClientRect().width;
+  
+      setInterval(() => {
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(-${slideWidth}px)`;
+  
+        track.addEventListener('transitionend', () => {
+          track.style.transition = 'none';
+          track.appendChild(track.firstElementChild);
+          track.style.transform = 'translateX(0)';
+        }, { once: true });
+  
+      }, 2500);
+    });
+  </script>
     
-    
+    <script>
+        window.addEventListener('load', () => {
+          const wrap = document.querySelector('.v-slider-wrap');
+          const track = wrap.querySelector('.v-slider-track');
+          const slide = wrap.querySelector('.v-slide');
+      
+          if (!track || !slide) return;
+      
+          const slideHeight = slide.getBoundingClientRect().height;
+      
+          setInterval(() => {
+            track.style.transition = 'transform 0.6s ease';
+            track.style.transform = `translateY(-${slideHeight}px)`;
+      
+            track.addEventListener('transitionend', () => {
+              track.style.transition = 'none';
+              track.appendChild(track.firstElementChild);
+              track.style.transform = 'translateY(0)';
+            }, { once: true });
+          }, 2500);
+        });
+      </script>
+
 </body>
 
 </html>
